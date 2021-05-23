@@ -7,6 +7,7 @@ const jsonParser = bodyParser.json()
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 mongoose.set('useUnifiedTopology', true);
+mongoose.set('useFindAndModify',false);
 const port = 3000;
 
 // Connect to MongoDB
@@ -24,7 +25,7 @@ mongoose
 app.post('/cidade', jsonParser, (req, res, next) => {
   try {
     var city = new Cidade(req.body)//create a city from the http request body
-    city.save(function (error,ans) {
+    city.save(function (error,ans) {//save city inside mongodb
       if (error) {
         res.status(400)
         res.json({ message: error.message })
@@ -41,7 +42,7 @@ app.post('/cidade', jsonParser, (req, res, next) => {
 app.post('/cliente', jsonParser, (req, res, next) => {
   try {
     let client = new Cliente(req.body)//create a client from the http request body
-    client.save(function (error,ans) {
+    client.save(function (error,ans) {//save client inside mongodb
       if (error) {
         res.status(400)
         res.json({ message: error.message })
@@ -57,8 +58,8 @@ app.post('/cliente', jsonParser, (req, res, next) => {
 //CITY by name
 app.get('/cidade/name/:city_name', jsonParser, (req, res, next) => {
   try {
-    Cidade.find({ Nome: req.params.city_name }).then(cities => {
-      if (cities.length > 0) {//If not null, found a document to return
+    Cidade.find({ Nome: req.params.city_name }).then(cities => {//search city by name in mongodb
+      if (cities.length > 0) {//If not empty, found a document to return
         res.status(200)
         res.json(cities)
       }
@@ -77,7 +78,7 @@ app.get('/cidade/name/:city_name', jsonParser, (req, res, next) => {
 //CITY by state
 app.get('/cidade/estado/:city_state', jsonParser, (req, res, next) => {
   try {
-    Cidade.find({ Estado: req.params.city_state }).then(cities => {
+    Cidade.find({ Estado: req.params.city_state }).then(cities => {//search city by state in mongodb
       if (cities.length > 0) {//If not null, found a document to return
         res.status(200)
         res.json(cities)
@@ -97,7 +98,7 @@ app.get('/cidade/estado/:city_state', jsonParser, (req, res, next) => {
 //CLIENT by name
 app.get('/cliente/name/:client_name', jsonParser, (req, res, next) => {
   try {
-    Cliente.find({ nome_completo: req.params.client_name }).then(client => {
+    Cliente.find({ nome_completo: req.params.client_name }).then(client => {//search client by name in mongodb
       if (client.length > 0) {//If not null, found a document to return
         res.status(200)
         res.json(client)
@@ -117,7 +118,7 @@ app.get('/cliente/name/:client_name', jsonParser, (req, res, next) => {
 //CLIENT by id
 app.get('/cliente/id/:client_id', jsonParser, (req, res, next) => {
   try {
-    Cliente.findById(req.params.client_id).then(client => {
+    Cliente.findById(req.params.client_id).then(client => {//search client by id in mongodb
       if (client) {//If not null, found a document to return
         res.status(200)
         res.json(client)
