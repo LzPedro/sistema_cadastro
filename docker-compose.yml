@@ -1,13 +1,15 @@
 version: '3'
 services:
   node:
+    command: npm start
     restart: always
-    build: backend
+    build: .
     ports:
       - 3000:3000
     volumes:
-      - ./backend/:/code
+      - ./server/:/usr/src/app/server
   mongo:
+    restart: always
     image: mongo:4.4.6
     ports:
       - 27017:27017

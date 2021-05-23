@@ -1,0 +1,15 @@
+{
+  "name": "my-package",
+  "version": "1.0.0",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "nodemon -L server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
