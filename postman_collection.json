@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "b5df0503-d3be-40d4-8a2c-6a1d69b02494",
+		"name": "entrevista node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/cidade/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Nome\":\"Santa Rita do Sapucaí\",\n\t\"Estado\":\"MG\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/cidade/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cidade",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/cliente/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome_completo\":\"Pedro Manoel\",\n\t\"sexo\":\"masculino\",\n\t\"data_de_nascimento\":\"1997-07-25\",\n\t\"idade\":\"23\",\n\t\"cidade_mora\":\"Santa Rita do Sapucaí\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/cliente/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cliente",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/cidade/name/arroizz",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/cidade/name/Santa Rita do Sapucaí",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cidade",
+						"name",
+						"Santa Rita do Sapucaí"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/cidade/estado/MG",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/cidade/estado/MG",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cidade",
+						"estado",
+						"MG"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/cliente/name/clukep",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/cliente/name/clukep",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cliente",
+						"name",
+						"clukep"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/cliente/id/60aad85e6eea0402c597eda8",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/cliente/id/60aad85e6eea0402c597eda8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cliente",
+						"id",
+						"60aad85e6eea0402c597eda8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/cliente/60aacf83a738e5008d3630ee",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome_completo\":\"arroizz\",\n\t\"sexo\":\"M\",\n\t\"data_de_nascimento\":\"1996-11-24\",\n\t\"idade\":\"23a\",\n\t\"cidade_mora\":\"Santa Rita do Sapucaí\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/cliente/60aacf83a738e5008d3630ee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cliente",
+						"60aacf83a738e5008d3630ee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/cliente/",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"60aae49133e0c200a462d0e3\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/cliente/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cliente",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
