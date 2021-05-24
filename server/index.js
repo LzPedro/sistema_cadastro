@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const routes = require("./routes");
+const routes_city = require("./routes/Cidade");
+const routes_client = require("./routes/Cliente");
 const app = express();
 
-app.use("/api", routes);
+app.use("/cidade", routes_city);
+app.use("/cliente", routes_client);
 app.use(express.urlencoded({ extended: false }));
 const port = 3000;
 
